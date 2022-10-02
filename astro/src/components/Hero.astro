@@ -1,7 +1,22 @@
 ---
-import CtaButton from "./CtaButton.astro";
+import CtaBtn from "./CtaBtn.astro";
 
-const {h11, h12, h2, p} = Astro.props;
+export interface Props {
+    h11: string;
+    h12: string;
+    h2: string;
+    p: string;
+    imgSrc?: string;
+    imgAlt?: string;
+    ctaBtns?: boolean;
+    ctaBtnRightLink?: string;
+    ctaBtnLeftLink?: string;
+    ctaBtnRightText?: string;
+    ctaBtnLeftText?: string;
+    
+}
+
+const {h11, h12, h2, p, imgSrc, imgAlt, ctaBtns=false, ctaBtnLeftText, ctaBtnLeftLink="", ctaBtnRightText, ctaBtnRightLink=""} = Astro.props;
 
 const turqouise = "#4796AE";
 const seaBlue = "#556F7A";
@@ -10,9 +25,14 @@ const seaBlue = "#556F7A";
     <h2>{h2}</h2>
     <h1>{h11}<br>{h12}</h1>
     <p>{p}</p>
-    <div class="ctaWrapper">
-        <CtaButton btnUrl="./coming-soon" btnOpen={false} btnColor={turqouise} btnDeepColor={seaBlue}>Kontakt oss</CtaButton>
-        <CtaButton btnUrl="./coming-soon" btnOpen={true} btnColor={turqouise} btnDeepColor={seaBlue}>Kontakt oss</CtaButton>
+    {ctaBtns &&
+        <div class="ctaWrapper">
+            <CtaBtn btnUrl={ctaBtnLeftLink} btnOpen={false} btnColor={turqouise} btnDeepColor={seaBlue}>{ctaBtnLeftText}</CtaBtn>
+            <CtaBtn btnUrl={ctaBtnRightLink} btnOpen={true} btnColor={turqouise}>{ctaBtnRightText}</CtaBtn>
+        </div>
+    }ß
+    <div class="imgWrapper">
+        <img src={imgSrc} alt={imgAlt} />
     </div>
 </section>
 
@@ -54,10 +74,19 @@ const seaBlue = "#556F7A";
     }
 
     .ctaWrapper {
-        margin-top: 2rem;
+        margin: 4rem auto;
         display: flex;
         justify-content: center;
         align-items: center;
+    }
+
+    .imgWrapper{
+        max-width: 70rem;
+        margin: auto;
+    }
+
+    img {
+        width: 100%;
     }
   
   </style>

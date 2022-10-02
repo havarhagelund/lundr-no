@@ -1,6 +1,7 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import Hero from "../components/Hero.astro";
+import samarbeidImg from "../assets/samarbeid.jpg";
 
 const heroContent = {
   h11: "Gode teknologiløsninger",
@@ -11,7 +12,8 @@ const heroContent = {
 ---
 
 <Layout>
-  <Hero h11={heroContent.h11} h12={heroContent.h12} h2={heroContent.h2} p={heroContent.p} />
-  
+  <Hero h11={heroContent.h11} h12={heroContent.h12} h2={heroContent.h2} p={heroContent.p} imgSrc={samarbeidImg} imgAlt="samarbeid" ctaBtns={true} ctaBtnLeftLink="./coming-soon" ctaBtnLeftText="Ta kontakt" ctaBtnRightLink="./coming-soon" ctaBtnRightText="Våre tjenester"/>
 </Layout>
 
+<style>
+</style>
