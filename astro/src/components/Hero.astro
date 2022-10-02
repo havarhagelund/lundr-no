@@ -1,10 +1,19 @@
 ---
+import CtaButton from "./CtaButton.astro";
+
 const {h11, h12, h2, p} = Astro.props;
+
+const turqouise = "#4796AE";
+const seaBlue = "#556F7A";
 ---
 <section>
     <h2>{h2}</h2>
     <h1>{h11}<br>{h12}</h1>
     <p>{p}</p>
+    <div class="ctaWrapper">
+        <CtaButton btnUrl="./coming-soon" btnOpen={false} btnColor={turqouise} btnDeepColor={seaBlue}>Kontakt oss</CtaButton>
+        <CtaButton btnUrl="./coming-soon" btnOpen={true} btnColor={turqouise} btnDeepColor={seaBlue}>Kontakt oss</CtaButton>
+    </div>
 </section>
 
 
@@ -13,7 +22,7 @@ const {h11, h12, h2, p} = Astro.props;
     h1 {
       font-family: "libertine", sans-serif;
       font-size: 5rem;
-      letter-spacing: -0.16rem;
+      letter-spacing: -0.2rem;
       font-weight: 400;
       text-align: center;
       margin: 0;
@@ -23,10 +32,11 @@ const {h11, h12, h2, p} = Astro.props;
     h2 {
       font-family: "inter", sans-serif;
       font-size: 1.125rem;
-      font-weight: 600;
+      font-weight: 500;
+      letter-spacing: .1rem;
       line-height: 1.2rem;
       text-align: center;
-      margin-top: 7rem;
+      margin-top: 5rem;
       color: #222829;
     }
   
@@ -41,6 +51,13 @@ const {h11, h12, h2, p} = Astro.props;
       max-width: 45rem;
       text-align: center;
       margin: 1rem auto;
+    }
+
+    .ctaWrapper {
+        margin-top: 2rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
     }
   
   </style>

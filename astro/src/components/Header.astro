@@ -1,5 +1,8 @@
 ---
-const navColour = "#4796AE";
+import CtaButton from "./CtaButton.astro";
+
+const turqouise = "#4796AE";
+const seaBlue = "#556F7A";
 ---
 
 <header>
@@ -11,12 +14,12 @@ const navColour = "#4796AE";
             <a href="./">Tjenester</a>
             <a href="./coming-soon">Integrasjoner</a>
             <a href="./coming-soon">Om oss</a>
-            <a href="./coming-soon" class="nav-contact">Ta kontakt</a>
+            <CtaButton btnUrl="./coming-soon" btnOpen={true} btnColor={turqouise}>Kontakt oss</CtaButton>
         </div>
     </div>
 </header>
 
-<style define:vars={{navColour}}>
+<style define:vars={{turqouise}}>
     header {
         padding: 1rem 3rem 0rem;
     }
@@ -60,22 +63,10 @@ const navColour = "#4796AE";
     }
 
     .nav-right a:hover {
-        color: var(--navColour);
+        color: var(--turqouise);
     }
 
-    .nav-right .nav-contact {
-        color: var(--navColour);
-        font-weight: 600;
-        line-height: 1.5rem;
-        padding: 0.75rem 1.5rem;
-        margin-left: 0.5rem;
-        box-shadow: inset 0 0 0 1px var(--navColour);
-        transition: all 300ms ease;
-    }
-
-    .nav-right .nav-contact:hover {
-        box-shadow: inset 0 0 0 2px var(--navColour);
-    }
+    
 
     
 </style>
