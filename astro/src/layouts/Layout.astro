@@ -1,21 +1,38 @@
+---
+import Header from "../components/Header.astro";
+
+const popstar = "#B24C63";
+const blueGreen = "#4796AE";
+const cadet = "#556F7A";
+const torquoiseGreen = "#AFE3C0";
+const DarkSeaGreen = "#90C290";
+---
+
 <!DOCTYPE html>
 <html lang="no">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>lundr.no</title>
 
+    <style is:global>
+      @font-face {
+        font-family: "libertine";
+        src: url("/fonts/linlibertine_adrs-webfont.woff") format("woff2");
+      }
+      @font-face {
+        font-family: "inter";
+        src: url("/fonts/Inter-VariableFont_slnt,wght.ttf") format("woff2");
+      }
 
-    <style>
-        @font-face {
-            font-family: "libertine";
-            src: url("/fonts/linlibertine_adrs-webfont.woff") format("woff2")
-        }
+      body {
+        margin: 0px;
+      }
     </style>
-    
-</head>
-<body>
+  </head>
+  <body>
+    <Header />
     <slot />
-</body>
+  </body>
 </html>

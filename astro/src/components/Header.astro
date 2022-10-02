@@ -1,0 +1,81 @@
+---
+const navColour = "#4796AE";
+---
+
+<header>
+    <div class="nav-wrapper">
+        <div class="nav-left">
+            <a href="./">Lundr</a>
+        </div>
+        <div class="nav-right">
+            <a href="./">Tjenester</a>
+            <a href="./integrasjoner">Integrasjoner</a>
+            <a href="./om-oss">Om oss</a>
+            <a href="./kontakt" class="nav-contact">Ta kontakt</a>
+        </div>
+    </div>
+</header>
+
+<style define:vars={{navColour}}>
+    header {
+        padding: 1rem 3rem 0rem;
+    }
+
+    .nav-wrapper {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        max-width: 70rem;
+        margin: auto;
+        transition: all 300ms ease;
+    }
+    
+    .nav-left a {
+        font-size: 1.5rem;
+        font-weight: 400;
+        color: #222829;
+        text-decoration: none;
+        line-height: 1.5rem;
+        
+    }
+    
+    .nav-right {
+        font-family: inter, sans-serif;
+        color: #222829;
+        font-size: 1rem;
+        font-weight: 400;
+        display: flex;
+        align-items: center;
+
+        
+    }
+    
+    .nav-right a {
+        font-size: 1rem;
+        font-weight: 400;
+        color: #222829;
+        text-decoration: none;
+        transition: all 200ms ease;
+        padding: 1.5rem;
+    }
+
+    .nav-right a:hover {
+        color: var(--navColour);
+    }
+
+    .nav-right .nav-contact {
+        color: var(--navColour);
+        font-weight: 600;
+        line-height: 1.5rem;
+        padding: 0.75rem 1.5rem;
+        margin-left: 0.5rem;
+        box-shadow: inset 0 0 0 1px var(--navColour);
+        transition: all 300ms ease;
+    }
+
+    .nav-right .nav-contact:hover {
+        box-shadow: inset 0 0 0 2px var(--navColour);
+    }
+
+    
+</style>
