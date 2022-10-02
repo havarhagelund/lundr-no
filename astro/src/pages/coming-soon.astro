@@ -1,0 +1,15 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Hero from "../components/Hero.astro";
+
+const heroContent = {
+  h11: "Snart tilbake, Back soon",
+  h12: "",
+  h2: "Vi jobber hard mot relasnsering av nettsidene",
+  p: "Support eller spørsmål? Vi kan nås på kontakt@lundr.no Need support or have questions? Reach out at support@lundr.no"
+};
+---
+
+<Layout>
+  <Hero h11={heroContent.h11} h12={heroContent.h12} h2={heroContent.h2} p={heroContent.p} />
+</Layout>
