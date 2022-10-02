@@ -2,6 +2,7 @@
 import Layout from "../layouts/Layout.astro";
 import Hero from "../components/Hero.astro";
 import samarbeidImg from "../assets/samarbeid.jpg";
+import CoreService from "../components/CoreService.astro";
 
 const heroContent = {
   h11: "Gode teknologiløsninger",
@@ -13,7 +14,14 @@ const heroContent = {
 
 <Layout>
   <Hero h11={heroContent.h11} h12={heroContent.h12} h2={heroContent.h2} p={heroContent.p} imgSrc={samarbeidImg} imgAlt="samarbeid" ctaBtns={true} ctaBtnLeftLink="./coming-soon" ctaBtnLeftText="Ta kontakt" ctaBtnRightLink="./coming-soon" ctaBtnRightText="Våre tjenester"/>
+  <CoreService heading="Samhandling Helt enkelt" scrollingHeader="Arbeidsstyring" pargraph="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ezibus mirandis maraculis ponter dustibus ergum!" xStart={`20%`} xEnd={`-20%`} offset={0} />
+  <CoreService heading="Samhandling Helt enkelt" scrollingHeader="Arbeidsstyring" pargraph="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ezibus mirandis maraculis ponter dustibus ergum!" xStart={`20%`} xEnd={`-20%`} offset={0.3} />
+  <CoreService heading="Samhandling Helt enkelt" scrollingHeader="Arbeidsstyring" pargraph="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ezibus mirandis maraculis ponter dustibus ergum!" xStart={`20%`} xEnd={`-20%`} offset={0.6} />
+  <div class="massePlass"></div>
 </Layout>
 
 <style>
+  .massePlass {
+    height: 100vh;
+  }
 </style>

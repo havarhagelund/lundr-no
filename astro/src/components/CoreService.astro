@@ -1,0 +1,104 @@
+---
+
+export interface Props {
+    scrollingHeader: string;
+    heading: string;
+    pargraph: string;
+    xStart: string;
+    xEnd: string;
+    offset: number;
+}
+
+const {scrollingHeader, heading, pargraph, xStart, xEnd, offset} = Astro.props as Props;
+---
+
+<section>
+    <div>
+        <h1 class="scrollingHeading">{scrollingHeader}</h1>
+    </div>
+    
+    <div class="serviceContainer">
+        <div class="headingWrapper">
+            <h2>{heading}</h2>
+        </div>
+        <div class="pargWrapper">
+            <p>{pargraph}</p>
+        </div>
+        
+    </div>
+    
+</section>
+
+
+<style define:vars={{xStart, xEnd, offset}}>
+    h1 {
+        color: white;
+        font-size: 12rem;
+        line-height: 0.7rem;
+        font-weight: 600;
+        letter-spacing: -1rem;
+        white-space: nowrap;
+        margin-bottom: 4rem;
+        animation: h1 1s linear;
+        z-index: -100;
+        position: inherit;
+    }
+
+    .serviceContainer {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        max-width: 60rem;
+        margin: auto;
+        margin-bottom: 20rem;
+    }
+
+    .headingWrapper {
+        margin: 0;
+    }
+
+    h2 {
+        max-width: 24rem;
+        font-family: "libertine", sans-serif;
+        font-size: 4rem;
+        line-height: 1;
+        font-weight: 400;
+        letter-spacing: -0.15rem;
+        margin: 0;
+        animation: h2 1s linear;
+    }
+
+    p {
+        max-width: 30rem;
+        font-size: 1.125rem;
+        line-height: 1.6;
+        margin: 0;
+        z-index: 100;
+        position: relative;
+    }
+
+    @keyframes h1 {
+        from {
+            transform: translateX(var(--xStart));
+        }
+        to {
+            transform: translateX(var(--xEnd));
+        }
+    }
+
+    :root * {
+    /* Pause the animation */
+    animation-play-state: paused;
+    /* Bind the animation to scroll */
+    animation-delay: calc( ( var(--scroll) - var(--offset) ) * -1s);
+    /* These last 2 properites clean up overshoot weirdness */
+    animation-iteration-count: 1;
+    animation-fill-mode: both;
+}
+</style>
+
+<script>
+    var offsetStart = 800;
+    var offsetEnd = 0;
+
+    window.addEventListener('scroll', () => document.documentElement.style.setProperty('--scroll', (window.scrollY - offsetStart) / (document.body.offsetHeight - offsetStart - offsetEnd - window.innerHeight)), false);
+</script>
