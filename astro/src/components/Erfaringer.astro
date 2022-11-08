@@ -1,0 +1,38 @@
+---
+export interface Props {
+    title: string;
+    from: string;
+    to: string;
+    p: string;
+}
+
+const {title, from, to, p} = Astro.props as Props;
+---
+
+<div class="erfaring-wrapper">
+    <div class="left">
+        <h3 class="title">{title}</h3>
+        <p class="from">{from} &nbsp - &nbsp {to}</p>
+    </div>
+    <div class="right">
+        <p class="p">{p}</p>
+    </div>
+</div>
+
+<style>
+    .erfaring-wrapper {
+        display: flex;
+        flex-direction: row;
+        margin: 2rem;
+    }
+
+    .right {
+        margin: 3rem 0;
+        margin-left: 7.5rem;
+    }
+
+    h3 {
+        font-family: "inter", sans-serif;
+        font-weight: 600;
+    }
+</style>

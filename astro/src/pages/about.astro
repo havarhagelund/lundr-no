@@ -1,0 +1,100 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Erfaring from "../components/Erfaringer.astro";
+import Hero from "../components/Hero.astro";
+import mountnImg from "../assets/mountain.jpg";
+import havarImg from "../assets/havar.jpeg";
+
+const heroContent = {
+    h11: "Student",
+    h12: "Frilanser",
+    h13: "Underviser",
+    h2: "",
+    p: "Ved siden av å studere mot en master i datateknologi på NTNU i Trondheim, jobber jeg frilanse med å hjelpe bedrifter med teknologi, er undervisningsassistent ved institutt for datateknologi og informatikk, og driver mattetimen.no hvor vi hjelper elever nå høyere."
+  };
+
+const erfaringer = [
+    {
+        title: "Undervisningsassistent",
+        from: "Aug 2022",
+        to: "Juni 2023",
+        p: "Jobbet som undervisningsassistent... ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra"
+    },
+    {
+        title: "Undervisningsassistent",
+        from: "Aug 2022",
+        to: "Juni 2023",
+        p: "Jobbet som undervisningsassistent... ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra"
+    }
+]
+---
+
+
+<Layout>
+    <Hero h11={heroContent.h11} h12={heroContent.h12} h13={heroContent.h13} h2={heroContent.h2} p={heroContent.p} imgSrc={mountnImg} imgAlt="samarbeid" ctaBtns={true} ctaBtnLeftText={"mattetimen.no"} ctaBtnLeftLink={"https://mattetimen.no"} ctaBtnRightText={"Les mer"} ctaBtnRightLink={"#more"}/>
+    <section id="more" class="more">
+        
+        <div class="prosjekter">
+            <h2>Noen tidligere prosjekter</h2>
+        </div>
+
+        <div class="erfaring">
+            <h2>Litt av hva jeg har gjort tidligere</h2>
+            {erfaringer.map((erfaring) => (
+                <Erfaring title={erfaring.title} from={erfaring.from} to={erfaring.to} p={erfaring.p}/>
+            ))}
+        </div>
+        
+    </section>
+    
+
+    <div class="about-wrapper">
+        <div class="aboutImgWrapper">
+            <img class="aboutImg" src={havarImg} alt="Håvar Hagelund" />
+        </div>
+        <div class="about-right">
+            <h2>Mer om meg</h2>
+            <p>Jeg digger å finne enkle løsninger på komplekse problemer, har stor glede av elegant brukergrensesnitt og brenner for produktivitet.</p>
+            <p>Den tiden som er igjen, trives jeg best i fjellet med gode venner.</p>
+        </div>
+        
+    </div>
+
+</Layout>
+
+<style>
+    .more {
+        max-width: 70rem;
+        margin: 5rem auto;
+    }
+    .about-wrapper {
+        display: flex;
+        flex-direction: row;
+        max-width: 70rem;
+        margin: 5rem auto;
+    }
+
+    .aboutImg {
+        border-radius: 50%;
+        max-width: 25rem;
+    }
+
+    .about-right {
+        margin: 2rem 5rem;
+    }
+
+    .about-right p {
+        font-family: "inter", sans-serif;
+        font-size: 1.125rem;
+        font-weight: 400;
+        line-height: 1.5rem;
+        margin-top: 2rem;
+        color: #222829;
+        max-width: 45rem;
+        margin: 1rem auto;
+        margin-bottom: 3rem;
+    }
+
+    
+    
+</style>
